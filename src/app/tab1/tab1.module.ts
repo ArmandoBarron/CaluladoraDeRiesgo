@@ -6,6 +6,14 @@ import { Tab1Page } from './tab1.page';
 import { ExploreContainerComponentModule } from '../explore-container/explore-container.module';
 
 import { Tab1PageRoutingModule } from './tab1-routing.module';
+import { MultiSelectModule } from 'primeng/multiselect';
+
+import { ButtonModule } from 'primeng/button';
+
+import { AutoCompleteModule } from 'primeng/autocomplete';
+
+import { IonicSelectableComponent } from 'ionic-selectable';
+
 
 @NgModule({
   imports: [
@@ -13,7 +21,11 @@ import { Tab1PageRoutingModule } from './tab1-routing.module';
     CommonModule,
     FormsModule,
     ExploreContainerComponentModule,
-    Tab1PageRoutingModule
+    Tab1PageRoutingModule,
+    MultiSelectModule,
+    ButtonModule,
+    AutoCompleteModule,
+    IonicSelectableComponent
   ],
   declarations: [Tab1Page]
 })

@@ -1,17 +1,76 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 1
+      Calculadora de riesgo
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
+  
+  <ion-card>
+    <ion-card-header>
+      Datos Personales
+    </ion-card-header>
+    <ion-card-content>
+      <form (ngSubmit)="submitForm()">
+        <ion-item>
+          <ion-label>Estado</ion-label>
+            <ionic-selectable
+              [(ngModel)]="selectedEstado"
+              [items]="ListaEstados"
+              itemValueField="CVE_ENT"
+              itemTextField="nombre entidad"
+              [canSearch]="true"
+              (onChange)="filterMun($event)" name="f-ent">
+          </ionic-selectable>
+        </ion-item>
+        
+        <ion-item>
+          <ion-label>Municipio</ion-label>
+            <ionic-selectable
+              [(ngModel)]="selectedMunicipio"
+              [items]="list_municipios"
+              itemValueField="CVE_MUN"
+              itemTextField="nombre municipio"
+              [canSearch]="true" name="f-mun">
+            </ionic-selectable>
+        </ion-item>
+
+
+        <ion-item>
+          <ion-label>Sexo</ion-label>
+          <ionic-selectable
+            [(ngModel)]="selectedSexo"
+            [items]="ListaSexos"
+            itemValueField="id"
+            itemTextField="nombre"
+            [canSearch]="true" name="f-sexo">
+          </ionic-selectable>
+        </ion-item>
+
+
+        <ion-item>
+          <ion-label>Rango de Edad</ion-label>
+          <ionic-selectable
+            [(ngModel)]="selectedEdad"
+            [items]="ListaEdades"
+            itemValueField="id"
+            itemTextField="nombre"
+            [canSearch]="true" name="f-edad">
+          </ionic-selectable>
+        </ion-item>
+
+        <ion-button expand="full" type="submit">Enviar</ion-button>
+
+      </form>
+    </ion-card-content>
+  </ion-card>
+
   <ion-header collapse="condense">
     <ion-toolbar>
       <ion-title size="large">Tab 1</ion-title>
     </ion-toolbar>
   </ion-header>
-
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+  
 </ion-content>
