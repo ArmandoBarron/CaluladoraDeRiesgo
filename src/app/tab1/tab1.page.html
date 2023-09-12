@@ -1,3 +1,6 @@
+<ion-split-pane contentId="main">
+
+<ion-menu contentId="main">
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
@@ -10,7 +13,7 @@
   
   <ion-card>
     <ion-card-header>
-      Datos Personales
+      Datos
     </ion-card-header>
     <ion-card-content>
       <form (ngSubmit)="submitForm()">
@@ -61,7 +64,7 @@
           </ionic-selectable>
         </ion-item>
 
-        <ion-button expand="full" type="submit">Enviar</ion-button>
+        <ion-button expand="full" type="submit">Calcular</ion-button>
 
       </form>
     </ion-card-content>
@@ -74,3 +77,94 @@
   </ion-header>
   
 </ion-content>
+
+</ion-menu>
+
+  <div class="ion-page" id="main">
+    <ion-header [translucent]="true">
+      <ion-toolbar>
+        <ion-buttons slot="start">
+          <ion-menu-button>
+          </ion-menu-button>
+        </ion-buttons>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content [fullscreen]="true">
+      <ion-grid>
+        <ion-row *ngIf="list_items">
+          <ion-col size="12">
+            <ion-card>
+              <ion-card-header>
+                <!-- <ion-card-title> -->
+                  Datos consultados
+                <!-- </ion-card-title> -->
+              </ion-card-header>
+                <!-- {{ formData | json }}
+                <br> -->
+                
+              <ion-card-content>
+                <ion-list>
+                  <ion-item>
+                    Estado: {{ formData['Estado']['nombre entidad'] }}    
+                  </ion-item>
+                  <ion-item>
+                    Municipio: {{ formData['Municipio']['nombre municipio'] }}
+                  </ion-item>
+                  <ion-item>
+                    Sexo: {{ formData['Sexo']['nombre'] }}
+                  </ion-item>
+                  <ion-item>
+                    Edad: {{ formData['Edad']['nombre'] }}
+                  </ion-item>
+                  
+                </ion-list>
+              </ion-card-content>
+            </ion-card>
+            
+          </ion-col>
+        </ion-row>
+        <ion-row *ngIf="list_items">
+          <ion-col>
+            <h3>
+              Más relevantes
+            </h3>
+            <!-- <ion-list>
+              <ion-list-header>
+                <h3>
+                  Más relevantes
+                </h3>
+              </ion-list-header>
+              <ion-item *ngFor="let item of list_items">
+                {{item|json}}
+                <br>
+                Causa: {{ item.descrip_defuncion }}<br>
+
+              </ion-item>
+            </ion-list> -->
+          </ion-col>
+        </ion-row>
+        <ion-row class="ion-justify-content-center">
+          <ion-col size="6">
+            <div id="fig1" style="width:700px;height:250px;"></div>
+          </ion-col>
+          <ion-col size="6">
+            <div id="fig2" style="width:700px;height:250px;"></div>
+          </ion-col>
+        </ion-row>
+        <ion-row class="ion-justify-content-center">
+          <ion-col size="6">
+            <div id="fig3" style="width:700px;height:250px;"></div>
+          </ion-col>
+          <ion-col size="6">
+            <div id="fig4" style="width:700px;height:250px;"></div>
+          </ion-col>
+        </ion-row>
+        <ion-row class="ion-justify-content-center">
+          <ion-col size="6">
+            <div id="fig5" style="width:600px;height:250px;"></div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-content>
+  </div>
+</ion-split-pane>

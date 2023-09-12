@@ -64,9 +64,9 @@ export class CataologosService {
   }
   getSexos(){
     return [
-        { id: 1, nombre: 'Hombre' },
-        { id: 2, nombre: 'Mujer' },
-        { id: 3, nombre: 'Otro' }
+        { id: 1, nombre: 'Hombres' },
+        { id: 2, nombre: 'Mujeres' },
+        { id: 3, nombre: 'Total' }
       ]
   }
 }
